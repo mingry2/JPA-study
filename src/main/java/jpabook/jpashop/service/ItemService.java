@@ -28,4 +28,11 @@ public class ItemService {
         return itemRepository.findOne(itemId);
     }
 
+    @Transactional // 영속상태로 변경 후 변경감지를 사용하여 업데이트(병합X)
+    public void updateItem(Long itemId, String name, int price, int stockQuantity) {
+        Item findItem = itemRepository.findOne(itemId);
+        findItem.setName(name);
+        findItem.setPrice(price);
+        findItem.setStockQuantity(stockQuantity);
+    }
 }

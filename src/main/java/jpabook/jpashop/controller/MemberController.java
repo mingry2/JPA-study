@@ -54,17 +54,4 @@ public class MemberController {
         return "members/memberList";
     }
 
-    @PostConstruct
-    public void init() {
-        Member member1 = new Member();
-        member1.setName("John Doe");
-        member1.setAddress(new Address("London", "London", "Korea"));
-        memberService.join(member1);
-
-        Member member2 = new Member();
-        member2.setName("민경");
-        member2.setAddress(new Address("Korea", "Korea", "Korea"));
-        memberService.join(member2);
-
-    }
 }

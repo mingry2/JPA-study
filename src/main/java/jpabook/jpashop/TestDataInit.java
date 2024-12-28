@@ -1,11 +1,11 @@
-package jpabook.jpashop.controller;
+package jpabook.jpashop;
 
 import jakarta.annotation.PostConstruct;
-import jpabook.jpashop.domain.Address;
-import jpabook.jpashop.domain.Member;
+import jpabook.jpashop.domain.*;
 import jpabook.jpashop.domain.item.Book;
 import jpabook.jpashop.service.ItemService;
 import jpabook.jpashop.service.MemberService;
+import jpabook.jpashop.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -15,6 +15,7 @@ public class TestDataInit {
 
     private final MemberService memberService;
     private final ItemService itemService;
+    private final OrderService orderService;
 
     @PostConstruct
     public void init() {
